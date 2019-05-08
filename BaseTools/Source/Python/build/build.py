@@ -1228,7 +1228,7 @@ class Build():
         # run
         if Target == 'run':
             RunDir = os.path.normpath(os.path.join(AutoGenObject.BuildDir, GlobalData.gGlobalDefines['ARCH']))
-            Command = '.\SecMain'
+            Command = '.\\SecMain'
             os.chdir(RunDir)
             LaunchCommand(Command, RunDir)
             return True
@@ -1360,7 +1360,7 @@ class Build():
         # run
         if Target == 'run':
             RunDir = os.path.normpath(os.path.join(AutoGenObject.BuildDir, GlobalData.gGlobalDefines['ARCH']))
-            Command = '.\SecMain'
+            Command = '.\\SecMain'
             os.chdir(RunDir)
             LaunchCommand(Command, RunDir)
             return True
@@ -1482,7 +1482,7 @@ class Build():
         if self.Fdf:
             # First get the XIP base address for FV map file.
             GuidPattern = re.compile("[-a-fA-F0-9]+")
-            GuidName = re.compile("\(GUID=[-a-fA-F0-9]+")
+            GuidName = re.compile("[(]GUID=[-a-fA-F0-9]+")
             for FvName in Wa.FdfProfile.FvDict:
                 FvMapBuffer = os.path.join(Wa.FvDir, FvName + '.Fv.map')
                 if not os.path.exists(FvMapBuffer):
